@@ -1,5 +1,6 @@
 import * as path from 'path';
 import * as typescript from 'typescript';
+import * as ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 const baseDir = __dirname;
 
@@ -36,6 +37,11 @@ module.exports = {
       ...buildAliasesFromTsconfig(baseDir)
     }
   },
+  plugins: [
+    new ForkTsCheckerWebpackPlugin({
+      async: false
+    })
+  ],
   module: {
     rules: [
       {
