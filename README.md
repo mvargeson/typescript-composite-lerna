@@ -40,7 +40,7 @@ To integrate those building process into project, we need `references` field lis
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./lib",
+    "outDir": "./dist",
     "rootDir": "./src",
     "composite": true
   },
@@ -57,7 +57,7 @@ To integrate those building process into project, we need `references` field lis
   ],
   "exclude": [
     "tests",
-    "lib"
+    "dist"
   ]
 }
 ```

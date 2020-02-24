@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./foo"
+    },
+    {
+      "path": "./bar"
+    },
+    {
+      "path": "./baz"
+    }
+  ]
+}

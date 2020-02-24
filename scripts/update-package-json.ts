@@ -13,15 +13,11 @@ packages.forEach(packageName => {
 
   const packageJSONData = JSON.parse(fs.readFileSync(packageJSONPath).toString());
   delete packageJSONData.scripts;
-  packageJSONData.main = './lib/index.js';
-  packageJSONData.types = './lib/index.d.ts';
-  packageJSONData.files = ['lib', 'src'];
+  packageJSONData.main = './dist/index.js';
+  packageJSONData.files = ['dist', 'src'];
   packageJSONData.scripts = {
-    'build': 'tsc -b ./tsconfig.package.json',
+    'build': 'tsc -b ./tsconfig',
     'prepublish': 'npm run build',
-  };
-  packageJSONData.publishConfig = {
-    access: 'public',
   };
   fs.writeFileSync(packageJSONPath, JSON.stringify(packageJSONData, null, '  '));
 });

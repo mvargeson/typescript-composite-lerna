@@ -1,20 +1,17 @@
 {
-  "name": "typescript-composite-lerna-baz",
+  "name": "@namespace/baz",
   "version": "0.1.0",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.js",
   "files": [
-    "lib",
+    "dist",
     "src"
   ],
   "scripts": {
-    "build": "tsc -b ./tsconfig.package.json",
+    "build": "webpack",
+    "clean": "rm -rf dist *.tsbuildinfo",
     "prepublish": "npm run build"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
-    "typescript-composite-lerna-bar": "0.1.0"
+    "@namespace/bar": "0.1.0"
   }
 }
